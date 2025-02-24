@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Difficulty Level Dashboard</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    /* General Reset */
+    body {
+     
+      margin: 0;
+      padding: 0;
+      font-family: 'Press Start 2P', cursive;
+      background-image: url('level1.jpg'); /* Replace 'space.jpg' with your desired background image path */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    
+
+    /* Dashboard Container */
+    .dashboard {
+
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+    }
+
+    .dashboard h1 {
+      
+      font-family: 'Press Start 2P', cursive;
+
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+    }
+
+    /* Difficulty Buttons */
+    .difficulty-btn {
+      font-family: Arial, sans-serif;
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+      padding: 15px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent buttons */
+      border: 2px solid rgba(255, 255, 255, 0.7); /* Subtle border for contrast */
+      cursor: pointer;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .difficulty-btn.easy {
+      border-color: #28a745;
+    }
+
+    .difficulty-btn.medium {
+      border-color: #ffc107;
+    }
+
+    .difficulty-btn.hard {
+      border-color: #dc3545;
+    }
+
+    .difficulty-btn:hover {
+      transform: scale(1.1);
+      background-color: rgba(255, 255, 255, 0.5); /* Highlight on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>Select Quizdom Level</h1>
+    <a href="easy.php" class="difficulty-btn easy">Easy</a>
+    <a href="medium.php" class="difficulty-btn medium">Medium</a>
+    <a href="hard.php" class="difficulty-btn hard">Hard</a>
+  </div>
+
+  <!-- Optional JavaScript for Dynamic Features -->
+  <script>
+    document.querySelectorAll('.difficulty-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default link action
+        const difficulty = button.classList.contains('easy') ? 'Easy' :
+                           button.classList.contains('medium') ? 'Medium' : 'Hard';
+        // Redirect based on the level selected
+        window.location.href = button.getAttribute('href');
+      });
+    });
+  </script>
+  
+</body>
+</html>

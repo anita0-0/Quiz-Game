@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art Quiz</title>
+  <style>
+    /* Import Pixel Font */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    /* General Reset */
+     /* General Reset */
+     body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('art1.jpg'); /* Replace 'art1.jpg' with the path to your background image */
+      background-size: cover;
+      background-repeat: repeat-y; /* Allows vertical scrolling */
+      background-position: center 0;
+      animation: scrollBackground 5s linear infinite; /* Animate scrolling */
+      height: 100vh; /* Full viewport height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: black;
+    }
+
+    /* Keyframes for scrolling background */
+    @keyframes scrollBackground {
+      0% {
+        background-position: center 0;
+      }
+      100% {
+        background-position: center 100%;
+      }
+    }
+
+    /* Header Section */
+    .header {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 5px 10px;
+      background-color:#DDA0DD;
+      color: white;
+      text-decoration: none;
+      border-radius: 2px;
+      font-family: 'Press Start 2P', cursive;
+      font-size: 0.8rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #D48AE6;
+    }
+
+    /* Main Content Section */
+    .game-intro {
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for better visibility */
+    }
+
+    .intro-content h2 {
+      font-family: 'Press Start 2P', cursive; /* Retro pixel font */
+      font-size: 3rem;
+      margin: 0;
+      color: #333;
+    }
+
+    .intro-content p {
+      font-family: 'Press Start 2P', cursive; /* Retro pixel font */
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #666;
+    }
+
+    .start-btn {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 1rem;
+      background-color: #DDA0DD;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .start-btn:hover {
+      background-color: #D48AE6;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <a href="categorie.php" class="btn back-btn">Home</a>
+  </header>
+
+  <!-- Main Content Section -->
+  <section class="game-intro">
+    <div class="intro-content">
+      <h2>Are You Ready?</h2>
+      <p>“Art is not what you see, but what you make others see.”
+    </p>
+      <button class="start-btn" onclick="startGame()">Start Game</button>
+    </div>
+  </section>
+
+  <!-- JavaScript to Handle Start Game -->
+  <script>
+    function startGame() {
+      // Redirect to the game page (replace with your game page name)
+      window.location.href = "art.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Scrolling Background</title>
+  <style>
+    /* Import Pixel Font */
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    /* General Reset */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Prevent scrolling bars */
+      font-family: 'Press Start 2P', cursive; /* Retro pixel font for everything */
+    }
+
+    /* Background */
+    .scrolling-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('pixelart.jpg'); /* Replace with your image URL */
+      background-size: cover;
+      background-repeat: repeat-y; /* Repeat vertically for scrolling effect */
+      animation: scroll 4s linear infinite; /* Infinite scrolling animation */
+    }
+
+    @keyframes scroll {
+      from {
+        background-position: 0 0;
+      }
+      to {
+        background-position: 0 100%;
+      }
+    }
+
+    /* Centered Pixel Content */
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000; /* Shadow for visibility */
+    }
+
+    .content h1,
+    .content h2,
+    .content button {
+      font-family: 'Press Start 2P', cursive; /* Pixel-style font for all text */
+    }
+
+    .content h1 {
+      font-size: 3rem; /* Large pixel-style text */
+      margin: 0;
+    }
+
+    .content h2 {
+      font-size: 1.5rem; /* Subheading in pixel style */
+      margin: 10px 0 20px;
+    }
+
+    .content button {
+      font-size: 1rem;
+      padding: 15px 30px;
+      background-color: #E0B0FF; /* Bright retro button color */
+      color: #fff;
+      border: 2px solid #fff; /* Pixelated border */
+      border-radius: 0; /* No border radius for a pixel look */
+      cursor: pointer;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px #000;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .content button:hover {
+      background-color:#F4A460; /* Slightly lighter red */
+      box-shadow: 2px 2px 0 #000; /* Reduced shadow on hover */
+      transform: translate(2px, 2px); /* Pixel-style pressed effect */
+    }
+  </style>
+</head>
+<body>
+  <div class="scrolling-background"></div>
+
+  <div class="content">
+    <h1>Quizdom</h1>
+    <h2>A Ocean of quizzes</h2>
+    <button onclick="location.href='Rule.html'">Let's Start</button>
+  </div>
+
+  
+
+</body>
+</html>

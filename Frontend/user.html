@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Dropdown Menu</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Profile container */
+        .profile-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        /* Profile picture */
+        .profile-pic {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #ccc;
+        }
+
+        /* Dropdown menu */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 250px;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .dropdown-menu.show {
+            display: block;
+        }
+
+        /* Large profile picture */
+        .large-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+
+        /* Profile details */
+        .profile-details {
+            margin: 10px 0;
+        }
+
+        .profile-details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Logout button */
+        .logout-btn {
+            display: inline-block;
+            margin: 10px 0;
+            padding: 8px 15px;
+            background-color: #e74c3c;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Profile Section -->
+    <div class="profile-container">
+        <!-- Small profile picture -->
+        <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic" id="profilePic">
+
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <!-- Large profile picture -->
+            <img src="profile-pic.jpg" alt="Large Profile Picture" class="large-pic">
+            <!-- User details -->
+            <div class="profile-details">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Username:</strong> johndoe123</p>
+                <p><strong>Email:</strong> johndoe@example.com</p>
+            </div>
+            <!-- Logout button -->
+            <a href="#" class="logout-btn" onclick="logout()">Logout</a>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Toggle dropdown menu when profile picture is clicked
+        const profilePic = document.getElementById("profilePic");
+        const dropdownMenu = document.getElementById("dropdownMenu");
+
+        profilePic.addEventListener("click", () => {
+            dropdownMenu.classList.toggle("show");
+        });
+
+        // Close dropdown if user clicks outside
+        window.addEventListener("click", (e) => {
+            if (!e.target.matches('.profile-pic')) {
+                if (dropdownMenu.classList.contains("show")) {
+                    dropdownMenu.classList.remove("show");
+                }
+            }
+        });
+
+        // Logout function (replace with real logic)
+        function logout() {
+            alert("You have been logged out.");
+            // Add logout logic here (e.g., redirect to login page)
+        }
+    </script>
+
+</body>
+</html>
